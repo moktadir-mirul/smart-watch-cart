@@ -17,3 +17,16 @@ for (let i = 0; i < colorButtons.length; i++) {
     })
       
 }
+
+function selectWristSize(size) {
+    const allSizes = ["S", "M", "L", "XL"];
+    for (let i = 0; i< allSizes.length; i++) {
+        const sizeButton = document.getElementById("size-"+allSizes[i]);
+        let singleSize = allSizes[i];
+        if (size === singleSize) {
+            sizeButton.classList.add("border-purple-600");
+        } else {
+            sizeButton.classList.remove("border-purple-600");
+        }
+    }
+}
