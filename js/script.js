@@ -30,3 +30,19 @@ function selectWristSize(size) {
         }
     }
 }
+
+const quantityButtons = document.getElementsByClassName("quantity-button");
+for (let quanBtn of quantityButtons) {
+    quanBtn.addEventListener("click", function(event) {
+        const amount = event.target.innerText === "+" ? 1 : -1;
+        const initialQuantity = Number(document.getElementById("quantity").innerText);
+        const nowQuantity = Math.max(0, initialQuantity + amount);
+        document.getElementById("quantity").innerText = nowQuantity;
+    })
+}
+
+document.getElementById("add-to-cart").addEventListener('click', function(event) {
+    const checkoutBtn = document.getElementById("checkout-container");
+    
+    checkoutBtn.classList.remove("hidden");
+})
